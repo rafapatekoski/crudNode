@@ -1,18 +1,21 @@
-// Importar o módulo Express
-const express = require('express');
+const express = require("express")
+const app = express()
+const bodyParser = require("body-parser")
 
-// Criar uma instância do aplicativo Express
-const app = express();
+//View engine
+app.set('view engine', 'ejs')
 
-// Configurar uma rota básica
-app.get('/', (req, res) => {
-    res.send('Olá, Mundo!');
-});
+//Body Parser
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json())
+//static
+app.use(express.static('public'))
 
-// Definir a porta em que o servidor irá escutar
-const port = 3000;
+//rotas
+app.get("/", (req, res)=>{
+    res.render("index")
+})
 
-// Iniciar o servidor
-app.listen(port, () => {
-    console.log(`Servidor Express rodando em http://localhost:${port}`);
-});
+app.listen(3000, ()=>{
+    console.log("O servidor está no ar")
+})
