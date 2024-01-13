@@ -1,0 +1,35 @@
+POST http://localhost:3000/api/alunos
+Content-Type: application/json
+
+{
+  "nome": "Exemplo Aluno 3",
+  "ra": "12392929",
+  "serie": "4A",
+  "sala": "101",
+  "chamada": "B",
+  "nascimento": "2020-01-01",
+  "laudo": "Nao",
+  "entrada": "05/02/24",
+  "saida": "000"
+}
+###
+GET http://localhost:3000/api/alunos
+###
+GET http://localhost:3000/api/alunos/65a0930802de59f34a205bba
+###
+DELETE http://localhost:3000/api/alunos/65a0930802de59f34a205bba
+###
+PUT http://localhost:3000/api/alunos/65a2b17725592c7be816c482
+Content-Type: application/json
+
+{
+  "nome": "Exemplo Aluno 3",
+  "ra": "100PORCENTOATUALIZADO",
+  "serie": "4A",
+  "sala": "101",
+  "chamada": "B",
+  "nascimento": "2020-01-01",
+  "laudo": "DOIDIN",
+  "entrada": "05/02/24",
+  "saida": "000"
+}
